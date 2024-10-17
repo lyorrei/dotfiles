@@ -25,3 +25,8 @@ fi
 config checkout
 config config status.showUntrackedFiles no
 ```
+or
+
+```bash
+curl https://raw.githubusercontent.com/lyorrei/dotfiles/main/scripts/config-init | bash
+```
