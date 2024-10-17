@@ -1,0 +1,1 @@
+/Users/lyo.quintao/dotfiles/.zshrc
