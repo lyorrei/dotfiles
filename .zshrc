@@ -1,13 +1,7 @@
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-
-ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=( git
   bundler
@@ -28,18 +22,6 @@ alias nvim-config="cd ~/.config/nvim && nvim ."
 alias n="nvim ."
 alias config="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 alias reload="docker compose down -v && docker compose up"
-
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-export PATH="$PATH:/Users/lyo.quintao/Documents/development/flutter/bin"
-
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"
-[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && \. "/usr/local/opt/nvm/etc/bash_completion"
-
-source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 function activate_conda() {
   # >>> conda initialize >>>
@@ -78,5 +60,7 @@ export PATH=~/Library/Android/sdk/platform-tools:$PATH
 
 source <(fzf --zsh)
 eval "$(zoxide init --cmd cd zsh)"
+eval "$(starship init zsh)"
 
 export DYLD_LIBRARY_PATH="$(brew --prefix)/lib:$DYLD_LIBRARY_PATH"
+
