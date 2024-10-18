@@ -10,7 +10,8 @@ vim.g.mapleader = " "
 
 -- vim.opt.foldmethod = "expr"
 -- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-
+vim.g.root_spec = { "cwd" }
+vim.opt.clipboard = "unnamedplus"
 vim.opt.expandtab = false -- Use tabs instead of spaces
 vim.opt.grepprg = "rg --vimgrep --smart-case --"
 vim.opt.hidden = true -- Enable modified buffers in background
