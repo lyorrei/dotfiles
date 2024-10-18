@@ -35,3 +35,9 @@ vim.api.nvim_create_autocmd("User", {
     require("util").version()
   end,
 })
+
+require("lspconfig").pyright.setup({
+  root_dir = function(fname)
+    return require("lspconfig/util").root_pattern("app", "pyproject.toml", "setup.py", "requirements.txt", "Pipfile")(fname)
+  end,
+})

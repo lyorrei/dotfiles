@@ -134,3 +134,5 @@ vim.g.rustaceanvim = {
 
 -- Disable auto format
 vim.g.autoformat = false
+
+
