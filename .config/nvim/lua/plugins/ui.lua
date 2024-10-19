@@ -353,35 +353,35 @@ return {
     },
     keys = {
       {
-        "<leader>1",
+        "<leader>T1",
         function()
           require("toggleterm").toggle(1, 0, Util.root.get(), "float")
         end,
         desc = "Terminal 1",
       },
       {
-        "<leader>2",
+        "<leader>T2",
         function()
           require("toggleterm").toggle(2, 0, Util.root.get(), "float")
         end,
         desc = "Terminal 2",
       },
       {
-        "<leader>3",
+        "<leader>T3",
         function()
           require("toggleterm").toggle(3, 0, Util.root.get(), "float")
         end,
         desc = "Terminal 3",
       },
       {
-        "<leader>4",
+        "<leader>T4",
         function()
           require("toggleterm").toggle(4, 0, Util.root.get(), "float")
         end,
         desc = "Terminal 4",
       },
       {
-        "<leader>5",
+        "<leader>T5",
         function()
           require("toggleterm").toggle(5, 0, Util.root.get(), "float")
         end,
