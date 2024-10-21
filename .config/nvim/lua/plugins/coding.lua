@@ -74,6 +74,11 @@ return {
       --     end
       --   end, { "i", "s" }),
       -- })
+      --
+
+      opts.experimental = {
+        ghost_text = false,
+      }
 
       opts.window = {
         completion = vim.tbl_deep_extend("force", cmp.config.window.bordered(), {
