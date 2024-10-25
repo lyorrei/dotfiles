@@ -21,6 +21,18 @@ return {
       },
     },
     opts = function(_, opts)
+      opts.filesystem = {
+        filtered_items = {
+          hide_dotfiles = false,
+          hide_gitignored = false,
+          visible = true,
+          hide_by_name = {
+            ".git",
+            ".DS_Store",
+            ".next"
+          },
+        },
+      }
       opts.close_if_last_window = true -- Close Neo-tree if it is the last window left in the tab
       opts.group_empty_dirs = true -- When true, empty folders will be grouped together
       opts.hijack_netrw_behavior = "open_default" -- netrw disabled, opening a directory opens neo-tree

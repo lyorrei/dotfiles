@@ -59,6 +59,17 @@ return {
       ---@type lspconfig.options
       ---@diagnostic disable: missing-fields
       servers = {
+        gopls = {
+          settings = {
+            gopls = {
+              buildFlags = { "-tags=wireinject" },
+              analyses = {
+                unusedparams = true,
+              },
+              staticcheck = true,
+            },
+          },
+        },
         cssls = {},
         html = {},
         basedpyright = {
