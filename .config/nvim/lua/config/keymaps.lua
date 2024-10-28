@@ -21,6 +21,9 @@ vim.keymap.set("n", "<C-c>", "<cmd>normal! ciw<cr>a")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
+-- Replace in current buffer
+vim.keymap.set("v", "<Leader>r", "<cmd>lua require('grug-far').with_visual_selection({ prefills = { paths = vim.fn.expand('%') } })<cr>", { desc = "Replace in Current Buffer" })
+
 -- htop
 if vim.fn.executable("htop") == 1 then
   vim.keymap.set("n", "<leader>xh", function()
@@ -204,3 +207,4 @@ if vim.fn.executable("watchman") == 1 then
 else
   vim.notify("watchman not found, using default filewatcher")
 end
+
