@@ -14,6 +14,14 @@ vim.keymap.set("n", "<down>", "<C-w>j")
 vim.keymap.set("n", "<up>", "<C-w>k")
 vim.keymap.set("n", "<right>", "<C-w>l")
 
+-- Prevent `d` from copying to clipboard
+vim.keymap.set("n", "d", '"_d', { noremap = true, silent = true })
+vim.keymap.set("v", "d", '"_d', { noremap = true, silent = true })
+
+-- Prevent `c` from copying to clipboard
+vim.keymap.set("n", "c", '"_c', { noremap = true, silent = true })
+vim.keymap.set("v", "c", '"_c', { noremap = true, silent = true })
+
 -- change word with <c-c>
 vim.keymap.set("n", "<C-c>", "<cmd>normal! ciw<cr>a")
 
