@@ -22,6 +22,9 @@ vim.keymap.set("v", "d", '"_d', { noremap = true, silent = true })
 vim.keymap.set("n", "c", '"_c', { noremap = true, silent = true })
 vim.keymap.set("v", "c", '"_c', { noremap = true, silent = true })
 
+-- Paste without yanking replaced content in visual mode
+vim.keymap.set("x", "p", '"_dP', { noremap = true, silent = true })
+
 -- change word with <c-c>
 vim.keymap.set("n", "<C-c>", "<cmd>normal! ciw<cr>a")
 
