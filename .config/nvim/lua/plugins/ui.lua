@@ -444,15 +444,15 @@ return {
     end,
   },
 
-  {
-    "utilyre/barbecue.nvim",
-    dev = true,
-    event = "VeryLazy",
-    dependencies = {
-      "SmiteshP/nvim-navic",
-    },
-    -- config = true,
-  },
+  -- {
+  --   "utilyre/barbecue.nvim",
+  --   dev = true,
+  --   event = "VeryLazy",
+  --   dependencies = {
+  --     "SmiteshP/nvim-navic",
+  --   },
+  --   -- config = true,
+  -- },
 
   {
     "christoomey/vim-tmux-navigator",
