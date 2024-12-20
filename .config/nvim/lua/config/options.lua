@@ -7,6 +7,7 @@
 -- vim.g.__ts_debug = 1
 
 vim.g.mapleader = " "
+vim.g.ai_cmp = false
 
 -- vim.opt.foldmethod = "expr"
 -- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
