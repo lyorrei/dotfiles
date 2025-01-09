@@ -11,18 +11,18 @@ return {
   },
 
   -- Correctly setup lspconfig for Nix 🚀
-  {
-    "neovim/nvim-lspconfig",
-    opts = {
-      servers = {
-        -- Ensure mason installs the server
-        rnix = {},
-      },
-      settings = {
-        rnix = {},
-      },
-    },
-  },
+  -- {
+  --   "neovim/nvim-lspconfig",
+  --   opts = {
+  --     servers = {
+  --       -- Ensure mason installs the server
+  --       rnix = {},
+  --     },
+  --     settings = {
+  --       rnix = {},
+  --     },
+  --   },
+  -- },
 
   {
     "nvimtools/none-ls.nvim",
