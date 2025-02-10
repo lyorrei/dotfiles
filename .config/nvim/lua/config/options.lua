@@ -8,6 +8,8 @@
 
 vim.g.mapleader = " "
 vim.g.ai_cmp = false
+vim.g.minianimate_disable = true
+vim.g.snacks_animate = false
 
 -- vim.opt.foldmethod = "expr"
 -- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
@@ -135,5 +137,4 @@ vim.g.rustaceanvim = {
 
 -- Disable auto format
 vim.g.autoformat = false
-
 

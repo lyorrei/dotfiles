@@ -104,20 +104,6 @@ return {
     end,
   },
 
-  -- Better `vim.notify()`
-  {
-    "rcarriga/nvim-notify",
-    opts = {
-      level = vim.log.levels.INFO,
-      fps = 165,
-      stages = "fade_in_slide_out",
-      background_colour = "#000000",
-      time_formats = {
-        notification = "%I:%M:%S %p",
-      },
-    },
-  },
-
   -- bufferline
   {
     "akinsho/bufferline.nvim",
@@ -169,91 +155,6 @@ return {
       end
     end,
   },
-
-  -- -- auto-resize windows
-  -- {
-  --   "anuvyklack/windows.nvim",
-  --   event = "WinNew",
-  --   dependencies = {
-  --     { "anuvyklack/middleclass" },
-  --     { "anuvyklack/animation.nvim", enabled = false },
-  --   },
-  --   keys = { { "<leader>Z", "<cmd>WindowsMaximize<cr>", desc = "Zoom" } },
-  --   config = function()
-  --     vim.o.winminwidth = 5
-  --     vim.o.winminwidth = 5
-  --     vim.o.equalalways = false
-  --     require("windows").setup({
-  --       animation = { enable = false, duration = 150 },
-  --     })
-  --   end,
-  -- },
-
-  -- scrollbar
-  -- { "lewis6991/satellite.nvim", opts = {}, event = "VeryLazy", enabled = false },
-  -- {
-  --   "echasnovski/mini.map",
-  --   main = "mini.map",
-  --   event = "VeryLazy",
-  --   enabled = false,
-  --   config = function()
-  --     local map = require("mini.map")
-  --     map.setup({
-  --       integrations = {
-  --         map.gen_integration.builtin_search(),
-  --         map.gen_integration.gitsigns(),
-  --         map.gen_integration.diagnostic(),
-  --       },
-  --     })
-  --     map.open()
-  --   end,
-  -- },
-  -- {
-  --   "petertriho/nvim-scrollbar",
-  --   event = "BufReadPost",
-  --   enabled = false,
-  --   config = function()
-  --     local scrollbar = require("scrollbar")
-  --     local colors = require("tokyonight.colors").setup()
-  --     scrollbar.setup({
-  --       handle = { color = colors.bg_highlight },
-  --       excluded_filetypes = { "prompt", "TelescopePrompt", "noice", "notify" },
-  --       marks = {
-  --         Search = { color = colors.orange },
-  --         Error = { color = colors.error },
-  --         Warn = { color = colors.warning },
-  --         Info = { color = colors.info },
-  --         Hint = { color = colors.hint },
-  --         Misc = { color = colors.purple },
-  --       },
-  --     })
-  --   end,
-  -- },
-
-  -- style windows with different colorschemes
-  -- {
-  --   "folke/styler.nvim",
-  --   event = "VeryLazy",
-  --   opts = {
-  --     themes = {
-  --       -- markdown = { colorscheme = "rose-pine" },
-  --       help = { colorscheme = "rose-pine", background = "dark" },
-  --       -- toggleterm = { colorscheme = "rose-pine" },
-  --     },
-  --   },
-  -- },
-  --
-  -- silly drops
-  -- {
-  --   "folke/drop.nvim",
-  --   enabled = false,
-  --   event = "VeryLazy",
-  --   config = function()
-  --     math.randomseed(os.time())
-  --     -- local theme = ({ "stars", "snow" })[math.random(1, 3)]
-  --     require("drop").setup({ theme = "spring", max = 60, interval = 100 })
-  --   end,
-  -- },
 
   -- lualine
   {
@@ -420,7 +321,6 @@ return {
     event = "VeryLazy",
     keys = { { "<leader>gm", "<cmd>GitMessenger<cr>", desc = "Git Messenger" } },
   },
-  -- { "rhysd/committia.vim", event = "BufRead" },
   {
     "ruifm/gitlinker.nvim",
     event = "VeryLazy",
@@ -435,24 +335,6 @@ return {
     },
     opts = {},
   },
-
-  {
-    "lukas-reineke/virt-column.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("virt-column").setup({ char = "▕" })
-    end,
-  },
-
-  -- {
-  --   "utilyre/barbecue.nvim",
-  --   dev = true,
-  --   event = "VeryLazy",
-  --   dependencies = {
-  --     "SmiteshP/nvim-navic",
-  --   },
-  --   -- config = true,
-  -- },
 
   {
     "christoomey/vim-tmux-navigator",
@@ -473,42 +355,8 @@ return {
     },
   },
 
-  -- {
-  --   "zbirenbaum/neodim",
-  --   event = "LspAttach",
-  --   opts = {
-  --     hide = {
-  --       virtual_text = false,
-  --       signs = false,
-  --       underline = false,
-  --     },
-  --   },
-  -- },
-
   {
     "LudoPinelli/comment-box.nvim",
     event = "BufReadPre",
-  },
-
-  "folke/twilight.nvim",
-  {
-    "folke/zen-mode.nvim",
-    cmd = "ZenMode",
-    opts = {
-      plugins = {
-        gitsigns = true,
-        tmux = true,
-        kitty = { enabled = false, font = "+2" },
-      },
-    },
-    keys = { { "<leader>z", "<cmd>ZenMode<cr>", desc = "Zen Mode" } },
-  },
-
-  {
-    "echasnovski/mini.animate",
-    opts = {
-      open = { enable = false },
-      close = { enable = false },
-    },
   },
 }

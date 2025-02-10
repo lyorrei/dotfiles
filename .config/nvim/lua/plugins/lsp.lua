@@ -1,16 +1,6 @@
 local util = require("util")
 
 return {
-  -- neodev
-  {
-    "folke/neodev.nvim",
-    opts = {
-      library = {
-        runtime = "~/projects/neovim/runtime/",
-      },
-    },
-  },
-
   {
     "williamboman/mason.nvim",
     opts = {
@@ -133,9 +123,9 @@ return {
     optional = true,
     opts = {
       formatters_by_ft = {
-        ["javascript"] = { "eslint_d" },
-        ["javascriptreact"] = { "eslint_d" },
-        ["typescript"] = { "eslint_d" },
+        ["javascript"] = { "eslint", "prettier" },
+        ["javascriptreact"] = { "eslint", "prettier" },
+        ["typescript"] = { "eslint", "prettier" },
         ["typescriptreact"] = { "prettier", "eslint" },
         ["python"] = function(bufnr)
           if require("conform").get_formatter_info("ruff_format", bufnr).available then
@@ -191,41 +181,6 @@ return {
             return true
           end,
         },
-      },
-    },
-  },
-
-  {
-    "mfussenegger/nvim-lint",
-    opts = {
-      linters_by_ft = {
-        lua = { "selene", "luacheck" },
-      },
-      linters = {
-        selene = {
-          condition = function(ctx)
-            return vim.fs.find({ "selene.toml" }, { path = ctx.filename, upward = true })[1]
-          end,
-        },
-        luacheck = {
-          condition = function(ctx)
-            return vim.fs.find({ ".luacheckrc" }, { path = ctx.filename, upward = true })[1]
-          end,
-        },
-      },
-    },
-  },
-
-  {
-    "zeioth/garbage-day.nvim",
-    dependencies = "neovim/nvim-lspconfig",
-    event = "VeryLazy",
-    opts = {
-      excluded_lsp_clients = {
-        "null-ls",
-        "jdtls",
-        "copilot",
-        "rust-analyzer",
       },
     },
   },
