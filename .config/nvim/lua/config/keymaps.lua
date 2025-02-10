@@ -219,3 +219,8 @@ else
   vim.notify("watchman not found, using default filewatcher")
 end
 
+vim.api.nvim_set_keymap("n", "<leader>ac",
+  ":lua require('CopilotChat'); vim.cmd('CopilotChatCommit #git:staged')<CR>",
+  { noremap = true, silent = true }
+)
+
