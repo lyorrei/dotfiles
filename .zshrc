@@ -3,11 +3,9 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-plugins=( git
-  bundler
-  npm
+plugins=(
+  git
   zsh-autosuggestions 
-  nvm
   asdf
 )
 
@@ -21,6 +19,7 @@ alias dev="cd ~/development && ls"
 alias nvim-config="cd ~/.config/nvim && nvim ."
 alias n="nvim ."
 alias config="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+alias configgit="lazygit --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 alias reload="docker compose down -v && docker compose up"
 
 function activate_conda() {
