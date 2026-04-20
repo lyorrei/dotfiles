@@ -11,4 +11,4 @@ vim.keymap.set("x", "p", '"_dP', { noremap = true, silent = true })
 
 -- Center screen when scrolling up and down
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C -u>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
