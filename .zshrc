@@ -10,6 +10,8 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+eval "$(~/.local/bin/mise activate zsh)"
+
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=023'
 
 alias github="cd ~/Documents/GitHub && ls" 
@@ -20,6 +22,7 @@ alias nvim-config="cd ~/.config/nvim && nvim ."
 alias n="nvim ."
 alias c="clear"
 alias config="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+alias lg="lazygit"
 alias configgit="lazygit --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 alias reload="docker compose down -v && docker compose up"
 
@@ -50,7 +53,6 @@ if [ -f '/Users/lyo.quintao/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/lyo.quintao/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/lyo.quintao/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-eval "$(~/.local/bin/mise activate zsh)"
 
 # Shopify Hydrogen alias to local projects
 alias h2='$(npm prefix -s)/node_modules/.bin/shopify hydrogen'
@@ -72,3 +74,9 @@ if [ -z "$DISABLE_ZOXIDE" ]; then
 fi
 
 export CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR=1
+
+# Added by Antigravity
+export PATH="/Users/lyo.quintao/.antigravity/antigravity/bin:$PATH"
+
+# OpenClaw Completion
+source "/Users/lyo.quintao/.openclaw/completions/openclaw.zsh"
