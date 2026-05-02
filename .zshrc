@@ -34,6 +34,10 @@ function t() {
   fi
 }
 
+alias cc='claude'
+alias ccc='claude -c'
+alias ccr='claude --resume'
+
 export PATH="$PATH:/Users/lyo.quintao/go/bin"
 
 bindkey -s ^a "nvims\n"
