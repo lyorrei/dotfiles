@@ -1,0 +1,7 @@
+customCommands:
+  - key: '<c-a>'
+    context: 'files'
+    description: 'AI commit message (Claude)'
+    command: '~/.config/lazygit/ai-commit.sh'
+    loadingText: ' Asking Claude...'
+    output: terminal
