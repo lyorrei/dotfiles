@@ -17,3 +17,18 @@ fi
 # checkout dotfiles from repo
 config checkout
 config config status.showUntrackedFiles no
+
+# Symlink lazygit config from ~/.config/lazygit (tracked) into the
+# location lazygit reads on macOS, so customCommands work out of the box.
+if [[ "$OSTYPE" == darwin* ]]; then
+  lg_dir="$HOME/Library/Application Support/lazygit"
+  lg_link="$lg_dir/config.yml"
+  lg_target="$HOME/.config/lazygit/config.yml"
+  mkdir -p "$lg_dir"
+  if [ -e "$lg_link" ] && [ ! -L "$lg_link" ]; then
+    mv "$lg_link" "$lg_link.backup"
+    echo "Backed up existing lazygit config to $lg_link.backup"
+  fi
+  ln -sfn "$lg_target" "$lg_link"
+  echo "Linked lazygit config: $lg_link -> $lg_target"
+fi
