@@ -52,5 +52,19 @@ return {
       desc = "Explorer Snacks (project root)",
     },
     { "<leader>e", "<leader>fe", desc = "Explorer Snacks (git root)", remap = true },
+    {
+      "<leader><leader>",
+      function()
+        Snacks.picker.files({ cwd = vim.fn.getcwd(-1, -1) })
+      end,
+      desc = "Find Files (cwd)",
+    },
+    {
+      "<leader>/",
+      function()
+        Snacks.picker.grep({ cwd = vim.fn.getcwd(-1, -1) })
+      end,
+      desc = "Grep (cwd)",
+    },
   },
 }
