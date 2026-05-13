@@ -4,6 +4,11 @@ set -e
 root="${1:-$PWD}"
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
+# Se já estamos dentro de um repo git, abrir lazygit direto no toplevel.
+if toplevel=$(git -C "$root" rev-parse --show-toplevel 2>/dev/null); then
+  exec lazygit -p "$toplevel"
+fi
+
 STATE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/lg-pick"
 STATE_FILE="$STATE_DIR/recent"
 mkdir -p "$STATE_DIR"
