@@ -1,0 +1,61 @@
+# Config de teste do herdr — espelha a muscle memory do tmux.conf
+# Remover este arquivo volta tudo pro default do herdr.
+#
+# Setup numa máquina nova (nada disso mora neste arquivo):
+#   brew install herdr
+#   herdr integration install claude      # hook de estado -> ~/.claude/hooks/
+#   mkdir -p ~/.claude/skills/herdr && herdr --skill > ~/.claude/skills/herdr/SKILL.md
+#
+# Depende de ~/.config/tmux/scripts/popup-{term,nvim}.sh e lg-pick.sh (versionados).
+# Aplicar mudanças sem reiniciar: herdr server reload-config
+
+[keys]
+prefix = "ctrl+a"
+
+# Alinhados com o tmux.conf
+reload_config = "prefix+r"        # herdr default: prefix+shift+r
+detach = "prefix+d"               # herdr default: prefix+q
+resize_mode = "prefix+shift+r"    # realocado (prefix+r virou reload)
+
+# Tabs: prefix+n é o popup do nvim, então next/prev vão pra [ ]
+next_tab = "prefix+]"
+previous_tab = "prefix+["
+goto = "prefix+space"             # herdr default: prefix+g (que é o lazygit)
+
+# Navegação entre panes sem prefix, estilo vim-tmux-navigator.
+# ATENÇÃO: sem a detecção condicional do plugin — o herdr captura essas teclas
+# sempre, inclusive quando tem nvim rodando no pane.
+focus_pane_left = "ctrl+h"
+focus_pane_down = "ctrl+j"
+focus_pane_up = "ctrl+k"
+focus_pane_right = "ctrl+l"
+
+# Navegação entre agentes — vem TUDO desligado por default no herdr
+next_agent = "prefix+a"
+previous_agent = "prefix+shift+a"
+focus_agent = "prefix+alt+1..9"   # pula direto pro agente N da sidebar
+
+# Terminal flutuante (tmux: prefix+t)
+# Roda o script tmux original: sessão persistente + toggle via detach-client.
+[[keys.command]]
+key = "prefix+t"
+type = "popup"
+command = "~/.config/tmux/scripts/popup-term.sh"
+width = "90%"
+height = "90%"
+
+# nvim flutuante (tmux: prefix+n) — mesma coisa
+[[keys.command]]
+key = "prefix+n"
+type = "popup"
+command = "~/.config/tmux/scripts/popup-nvim.sh"
+width = "90%"
+height = "90%"
+
+# lazygit picker (tmux: prefix+g) — o script não depende de tmux, reaproveitado direto
+[[keys.command]]
+key = "prefix+g"
+type = "popup"
+command = "~/.config/tmux/scripts/lg-pick.sh"
+width = "85%"
+height = "85%"
